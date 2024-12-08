@@ -3,6 +3,9 @@
 
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// After updating schema run `npx prisma db push`
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -18,6 +21,7 @@ model User {
   email String
   phoneNumber String
   gender String
+  // TODO: add created at and updated at field
 }
 
 model Task {
@@ -26,4 +30,5 @@ model Task {
   description String
   // owner   User      @relation(fields: [userId], references: [id])  //Implement owner in next commit.
   // ownerId String    @db.ObjectId
+  // TODO: add created at and updated at field
 }

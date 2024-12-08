@@ -26,6 +26,8 @@ const port = process.env.PORT || 3000;
 
 const LocalURL = `http://${process.env.LOCAL_URL}:${port}`;
 
+// TODO: run the app in another port if specific port is in use
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
     console.log(`URL:  http://localhost:${port}`);

@@ -1,0 +1,5 @@
+Cmd code to know which process running on a specific port
+netstat -ano | findstr :<PORT>
+netstat -a -n -o | find "<PORT>"
+To kill
+taskkill /PID <PID> /F
