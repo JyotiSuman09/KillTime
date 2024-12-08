@@ -37,10 +37,10 @@ export async function getUsers(req: Request, res: Response, next: NextFunction) 
 // Get all a single user
 export async function getUser(req: Request, res: Response, next: NextFunction) {
   try {
-    const { userid } = req.params;
+    const { userId } = req.params;
     const user = await prisma.user.findFirst({
       where: {
-        id: userid,
+        id: userId,
       },
     });
 
@@ -56,12 +56,12 @@ export async function getUser(req: Request, res: Response, next: NextFunction) {
 
 // deleting a user
 export async function deleteUser(req: Request, res: Response, next: NextFunction): Promise<void> {
-  const { userid } = req.params;
+  const { userId } = req.params;
 
   try {
     const user = await prisma.user.findFirst({
       where: {
-        id: userid,
+        id: userId,
       },
     });
 
@@ -74,7 +74,7 @@ export async function deleteUser(req: Request, res: Response, next: NextFunction
     }
     await prisma.user.delete({
       where: {
-        id: userid,
+        id: userId,
       },
     }),
       res.json({
@@ -89,11 +89,11 @@ export async function deleteUser(req: Request, res: Response, next: NextFunction
 // Updating a single user
 export async function updateUser(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const { userid } = req.params;
+    const { userId } = req.params;
 
     const user = await prisma.user.findFirst({
       where: {
-        id: userid,
+        id: userId,
       },
     });
 
@@ -107,7 +107,7 @@ export async function updateUser(req: Request, res: Response, next: NextFunction
 
     const updatedUser = await prisma.user.update({
       where: {
-        id: userid,
+        id: userId,
       },
       data: req.body,
     });
