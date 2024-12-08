@@ -14,8 +14,8 @@ const userRoute = Router();
 
 userRoute.post("", validateSchema(createUserSchema), createUser);
 userRoute.get("", getUsers);
-userRoute.get("/:userid", getUser);
-userRoute.delete("/:userid", deleteUser);
-userRoute.patch("/:userid", validateSchema(updateUserSchema), updateUser);
+userRoute.get("/:userId", getUser);
+userRoute.delete("/:userId", deleteUser);
+userRoute.patch("/:userId", validateSchema(updateUserSchema), updateUser);
 
 export default userRoute;
